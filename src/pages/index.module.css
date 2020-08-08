@@ -1,0 +1,105 @@
+/* .scrolling-background {
+  position: absolute;
+} */
+
+.header {
+  position: relative;
+  /* z-index: 1; */
+  height: 100vh;
+  height: calc(100vh - var(--vh-offset, 0px));
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  font-size: 20px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 9px;
+  /* compensate letter-spacing, see https://stackoverflow.com/questions/21612058/letter-spacing-wrong-text-center-alignment */
+  padding-left: 9px;
+  text-transform: uppercase;
+}
+
+.description {
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  padding-left: 0.12em;
+  color: #94a4ba;
+  text-transform: lowercase;
+}
+
+.description::before {
+  content: "{ ";
+  opacity: 0.5;
+}
+
+.description::after {
+  content: " }";
+  opacity: 0.5;
+}
+
+.social-links {
+  margin-top: 30px;
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.chevron {
+  position: absolute;
+  /* color: pink; */
+  bottom: 20px;
+  animation: fade-top 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 3;
+}
+
+.wrapper {
+  scroll-snap-align: start;
+  /* background-color: transparent; */
+}
+
+.fade-top {
+  animation: fade-top 1s;
+  animation-delay: 0.25s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fade-top {
+  0% {
+    /* 
+     * Uses translate3d to workaround ie11 bug with vh in translateY
+     * See https://stackoverflow.com/questions/42454352/2d-transform-transition-dosent-work-with-vw-and-vh-units-in-ie11
+     */
+    transform: translate3d(0, -10vh, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fade-bottom {
+  animation: fade-bottom 1s;
+  animation-delay: 0.25s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translate3d(0, 10vh, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
