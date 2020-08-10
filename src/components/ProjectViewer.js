@@ -92,13 +92,6 @@ const ProjectViewer = ({project}) => {
                                                         // default assumes 100vw which is wrong for us and ends up loading a version that's too big/heavy
                                                         sizes: `(min-aspect-ratio: ${presentationWidth}/${presentationHeight}) calc(80vh * ${aspectRatio}), 90vw`,
                                                     }}
-                                                    style={
-                                                        {
-                                                            // width: "100%",
-                                                            // "box-shadow":
-                                                            //   "0 40px 80px 0 rgba(0, 0, 0, 0.2), 0 60px 200px 0 rgba(0, 0, 0, 0.19)",
-                                                        }
-                                                    }
                                                 />
                                             </a>
                                         </ImgContainer>
