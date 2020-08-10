@@ -1,97 +1,150 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-  faStackOverflow,
+    faEnvelope,
+    faChevronDown,
+    faGraduationCap,
+    faFile
+} from "@fortawesome/free-solid-svg-icons";
+import {
+    faGithub,
+    faLinkedin,
+    faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { graphql } from "gatsby";
+import {graphql} from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import ScrollingColorBackground from "../components/ScrollingColorBackground";
 import SocialLink from "../components/SocialLink";
 import ProjectViewer from "../components/ProjectViewer";
+import Img from "gatsby-image"
 
 import "./index.module.css";
 
-const IndexPage = ({ data }) => {
-  const projects = data.allProjectsYaml.edges;
+const IndexPage = ({data}) => {
+    const projects = data.allProjectsYaml.edges;
 
-  // console.log("==projects", projects);
+    // console.log("==projects", projects);
 
-  return (
-    <Layout>
-      <SEO
-        keywords={[
-          `jean regisser`,
-          `portfolio`,
-          `software`,
-          `engineer`,
-          `ios`,
-          `android`,
-          `mobile`,
-          `react native`,
-        ]}
-      />
-      <div
-        style={{
-          position: "relative",
-        }}
-      >
-        <ScrollingColorBackground
-          selector=".js-color-stop[data-background-color]"
-          colorDataAttribute="data-background-color"
-        />
-        <div
-          className="js-color-stop"
-          data-background-color={"white"}
-          styleName="wrapper"
-          style={{ height: "100vh" }}
-        >
-          <div styleName="header">
-            <div styleName="fade-top">
-              <h1 styleName="title">jean regisser</h1>
-              <p styleName="description">software engineer</p>
+    return (
+        <Layout>
+            <SEO
+                keywords={[
+                    `Aaron Conway`,
+                    `nursing research`,
+                    `research`,
+                    `nursing`,
+                    `sedation`,
+                    `procedural sedation and analgesia`,
+                    `procedural sedation`,
+                    `conscious sedation`,
+                    `anesthesia`,
+                    `temperature`,
+                    `capnography`
+                ]}
+            />
+            <div
+                style={{
+                    position: "relative",
+                }}
+            >
+                <ScrollingColorBackground
+                    selector=".js-color-stop[data-background-color]"
+                    colorDataAttribute="data-background-color"
+                />
+                <div
+                    className="js-color-stop"
+                    data-background-color={"white"}
+                    styleName="wrapper"
+                    style={{height: "100vh"}}
+                >
+                    <div styleName="header">
+                        <div styleName="fade-top">
+                            <Img fixed={data.profilepic.childImageSharp.fixed}
+                            />
+                            <h1 styleName="title">aaron conway</h1>
+                            <p styleName="description">RBC Chair in Cardiovascular Nursing Research</p>
+                        </div>
+                        <div styleName="social-links fade-bottom">
+                            <SocialLink
+                                name="Email"
+                                icon={faEnvelope}
+                                href="mailto:aaron.conway@utoronto.ca"
+                            />
+                            <SocialLink
+                                name="Twitter"
+                                icon={faTwitter}
+                                href="https://twitter.com/aw_conway"
+                            />
+                            <SocialLink
+                                name="GitHub"
+                                icon={faGithub}
+                                href="https://github.com/awconway"
+                            />
+                            <SocialLink
+                                name="GoogleScholar"
+                                icon={faGraduationCap}
+                                href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
+                            />
+                            <SocialLink
+                                name="LinkedIn"
+                                icon={faLinkedin}
+                                href="https://www.linkedin.com/in/aaron-conway-toronto/"
+                            />
+                            <SocialLink
+                                name="CV"
+                                icon={faFile}
+                                href="https://conwaycv.netlify.app"
+                            />
+                        </div>
+                        <FontAwesomeIcon styleName="chevron" icon={faChevronDown}/>
+                    </div>
+                </div>
+                {projects.map(({node}) => (
+                    <ProjectViewer key={node.id} project={node}/>
+                ))}
             </div>
-            <div styleName="social-links fade-bottom">
-              <SocialLink
-                name="Email"
-                icon={faEnvelope}
-                href="mailto:jean.regisser@gmail.com"
-              />
-              <SocialLink
-                name="Twitter"
-                icon={faTwitter}
-                href="https://twitter.com/jeanregisser"
-              />
-              <SocialLink
-                name="GitHub"
-                icon={faGithub}
-                href="https://github.com/jeanregisser"
-              />
-              <SocialLink
-                name="StackOverflow"
-                icon={faStackOverflow}
-                href="https://stackoverflow.com/users/158525/jean-regisser"
-              />
-              <SocialLink
-                name="LinkedIn"
-                icon={faLinkedin}
-                href="https://www.linkedin.com/in/jeanregisser/"
-              />
-            </div>
-            <FontAwesomeIcon styleName="chevron" icon={faChevronDown} />
-          </div>
-        </div>
-        {projects.map(({ node }) => (
-          <ProjectViewer key={node.id} project={node} />
-        ))}
-      </div>
-    </Layout>
-  );
+            <footer styleName="header">
+                <div styleName="fade-top">
+                    <h1 styleName="title">aaron conway</h1>
+                    <p styleName="description">RBC Chair in Cardiovascular Nursing Research</p>
+                </div>
+                <div styleName="social-links fade-bottom">
+                    <SocialLink
+                        name="Email"
+                        icon={faEnvelope}
+                        href="mailto:aaron.conway@utoronto.ca"
+                    />
+                    <SocialLink
+                        name="Twitter"
+                        icon={faTwitter}
+                        href="https://twitter.com/aw_conway"
+                    />
+                    <SocialLink
+                        name="GitHub"
+                        icon={faGithub}
+                        href="https://github.com/awconway"
+                    />
+                    <SocialLink
+                        name="GoogleScholar"
+                        icon={faGraduationCap}
+                        href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
+                    />
+                    <SocialLink
+                        name="LinkedIn"
+                        icon={faLinkedin}
+                        href="https://www.linkedin.com/in/aaron-conway-toronto/"
+                    />
+                    <SocialLink
+                        name="CV"
+                        icon={faFile}
+                        href="https://conwaycv.netlify.app"
+                    />
+                </div>
+            </footer>
+        </Layout>
+    );
 };
 
 export default IndexPage;
@@ -117,7 +170,7 @@ export const IndexQuery = graphql`
           description
           keywords
           screenshots {
-            device
+            link
             image {
               id
               childImageSharp {
@@ -132,5 +185,12 @@ export const IndexQuery = graphql`
         }
       }
     }
+   profilepic: file(relativePath: {eq: "circle-cropped.png"}) {
+                        childImageSharp {
+                          fixed(width: 125, height: 125){
+                            ...GatsbyImageSharpFixed
+                        }
+                        }
+                      }
   }
 `;

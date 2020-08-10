@@ -9,7 +9,7 @@ let supportsPassive = false;
 try {
   var opts = Object.defineProperty({}, "passive", {
     get: function() {
-      supportsPassive = true;
+    return supportsPassive = true;
     },
   });
   window.addEventListener("testPassive", null, opts);

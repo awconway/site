@@ -35,17 +35,11 @@ const Layout = ({ children }) => {
           site {
             siteMetadata {
               title
-              repositoryUrl
-              commitHash
             }
           }
         }
       `}
       render={data => {
-        const { repositoryUrl, commitHash } = data.site.siteMetadata;
-
-        const commitUrl = `${repositoryUrl}/commit/${commitHash}`;
-        const shortCommitHash = commitHash.substring(0, 7);
 
         return (
           <>
@@ -60,11 +54,6 @@ const Layout = ({ children }) => {
               }
             >
               <main>{children}</main>
-              <footer>
-                © {new Date().getFullYear()} Jean Regisser, source{" "}
-                <a href={commitUrl}>{shortCommitHash}</a>, built with{" "}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-              </footer>
             </div>
           </>
         );

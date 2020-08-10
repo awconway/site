@@ -2,9 +2,9 @@ const url = require("url");
 
 module.exports = {
   siteMetadata: {
-    title: `Jean Regisser { software engineer }`,
-    description: `Portfolio of software engineer Jean Regisser.`,
-    author: `@jeanregisser`,
+    title: `Aaron Conway { nursing sedation research }`,
+    description: `Personal webpage for Aaron Conway`,
+    author: `@aw_conway`,
     // These are provided by the netlify build
     repositoryUrl:
       (process.env.REPOSITORY_URL &&
@@ -35,14 +35,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-13098799-1`,
+        // trackingId: `UA-13098799-1`,
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jean Regisser`,
-        short_name: `Regisser`,
+        name: `Aaron Conway`,
+        short_name: `Conway`,
         start_url: `/`,
         // background_color: `#663399`,
         theme_color: `#fffff`,
