@@ -1,8 +1,8 @@
-# [jeanregisser.com](https://jeanregisser.com)
+# [aaronconway.info](https://www.aaronconway.info)
 
 ## Overview
 
-Codebase for [jeanregisser.com](https://jeanregisser.com)
+Codebase for [aaronconway.info](https://www.aaronconway.info)
 
 Portfolio site built using Gatsby + Netlify.
 
@@ -11,9 +11,3 @@ Portfolio site built using Gatsby + Netlify.
 - GatsbyJS
 - React Reveal
 - Google Analytics
-
-### Testing
-
-<a href="https://www.browserstack.com/">
-    <img alt="BrowserStack" src="./browserstack-logo.svg" width="200" />
-</a>
