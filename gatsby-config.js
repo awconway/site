@@ -5,6 +5,7 @@ module.exports = {
     title: `Aaron Conway { nursing sedation research }`,
     description: `Personal webpage for Aaron Conway`,
     author: `@aw_conway`,
+    siteUrl: "https://www.aaronconway.info",
     // These are provided by the netlify build
     repositoryUrl:
       (process.env.REPOSITORY_URL &&
@@ -14,6 +15,7 @@ module.exports = {
     commitHash: process.env.COMMIT_REF || "dev",
   },
   plugins: [
+      `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -35,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // trackingId: `UA-13098799-1`,
-      },
+        trackingId: `UA-147024825-5`,
+},
     },
     {
       resolve: `gatsby-plugin-manifest`,
