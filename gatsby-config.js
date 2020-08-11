@@ -15,7 +15,6 @@ module.exports = {
     commitHash: process.env.COMMIT_REF || "dev",
   },
   plugins: [
-      `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -25,8 +24,15 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
+        host: 'https://www.aaronconway.info'
         path: `${__dirname}/src/data/`,
       },
     },
