@@ -39,8 +39,7 @@ const Layout = ({ children }) => {
           }
         }
       `}
-      render={data => {
-
+      render={(data) => {
         return (
           <>
             <div

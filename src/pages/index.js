@@ -1,150 +1,160 @@
 import React from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faEnvelope,
-    faChevronDown,
-    faGraduationCap,
-    faFile
+  faEnvelope,
+  faChevronDown,
+  faGraduationCap,
+  faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-    faGithub,
-    faLinkedin,
-    faTwitter,
+  faGithub,
+  faLinkedin,
+  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import ScrollingColorBackground from "../components/ScrollingColorBackground";
 import SocialLink from "../components/SocialLink";
 import ProjectViewer from "../components/ProjectViewer";
-import Img from "gatsby-image"
+import Img from "gatsby-image";
 
 import "./index.module.css";
 
-const IndexPage = ({data}) => {
-    const projects = data.allProjectsYaml.edges;
+import { CustomView, isMobile } from "react-device-detect";
 
-    // console.log("==projects", projects);
+const IndexPage = ({ data }) => {
+  const projects = data.allProjectsYaml.edges;
 
-    return (
-        <Layout>
-            <SEO
-                keywords={[
-                    `Aaron Conway`,
-                    `nursing research`,
-                    `research`,
-                    `nursing`,
-                    `sedation`,
-                    `procedural sedation and analgesia`,
-                    `procedural sedation`,
-                    `conscious sedation`,
-                    `anesthesia`,
-                    `temperature`,
-                    `capnography`
-                ]}
+  // console.log("==projects", projects);
+
+  return (
+    <Layout>
+      <SEO
+        keywords={[
+          `Aaron Conway`,
+          `nursing research`,
+          `research`,
+          `nursing`,
+          `sedation`,
+          `procedural sedation and analgesia`,
+          `procedural sedation`,
+          `conscious sedation`,
+          `anesthesia`,
+          `temperature`,
+          `capnography`,
+        ]}
+      />
+      <div
+        style={{
+          position: "relative",
+        }}
+      >
+        <div styleName="header">
+          <div styleName="fade-top">
+            <Img fixed={data.profilepic.childImageSharp.fixed} />
+            <h1 styleName="title">aaron conway</h1>
+            <p styleName="description">
+              RBC Chair in Cardiovascular Nursing Research
+            </p>
+          </div>
+          <div styleName="social-links fade-bottom">
+            <SocialLink
+              name="Email"
+              icon={faEnvelope}
+              href="mailto:aaron.conway@utoronto.ca"
             />
-            <div
-                style={{
-                    position: "relative",
-                }}
-            >
-                <ScrollingColorBackground
-                    selector=".js-color-stop[data-background-color]"
-                    colorDataAttribute="data-background-color"
-                />
-                <div
-                    className="js-color-stop"
-                    data-background-color={"white"}
-                    styleName="wrapper"
-                    style={{height: "100vh"}}
-                >
-                    <div styleName="header">
-                        <div styleName="fade-top">
-                            <Img fixed={data.profilepic.childImageSharp.fixed}
-                            />
-                            <h1 styleName="title">aaron conway</h1>
-                            <p styleName="description">RBC Chair in Cardiovascular Nursing Research</p>
-                        </div>
-                        <div styleName="social-links fade-bottom">
-                            <SocialLink
-                                name="Email"
-                                icon={faEnvelope}
-                                href="mailto:aaron.conway@utoronto.ca"
-                            />
-                            <SocialLink
-                                name="Twitter"
-                                icon={faTwitter}
-                                href="https://twitter.com/aw_conway"
-                            />
-                            <SocialLink
-                                name="GitHub"
-                                icon={faGithub}
-                                href="https://github.com/awconway"
-                            />
-                            <SocialLink
-                                name="GoogleScholar"
-                                icon={faGraduationCap}
-                                href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
-                            />
-                            <SocialLink
-                                name="LinkedIn"
-                                icon={faLinkedin}
-                                href="https://www.linkedin.com/in/aaron-conway-toronto/"
-                            />
-                            <SocialLink
-                                name="CV"
-                                icon={faFile}
-                                href="https://conwaycv.netlify.app"
-                            />
-                        </div>
-                        <FontAwesomeIcon styleName="chevron" icon={faChevronDown}/>
-                    </div>
-                </div>
-                {projects.map(({node}) => (
-                    <ProjectViewer key={node.id} project={node}/>
-                ))}
-            </div>
-            <footer styleName="header">
-                <div styleName="fade-top">
-                    <h1 styleName="title">aaron conway</h1>
-                    <p styleName="description">RBC Chair in Cardiovascular Nursing Research</p>
-                </div>
-                <div styleName="social-links fade-bottom">
-                    <SocialLink
-                        name="Email"
-                        icon={faEnvelope}
-                        href="mailto:aaron.conway@utoronto.ca"
-                    />
-                    <SocialLink
-                        name="Twitter"
-                        icon={faTwitter}
-                        href="https://twitter.com/aw_conway"
-                    />
-                    <SocialLink
-                        name="GitHub"
-                        icon={faGithub}
-                        href="https://github.com/awconway"
-                    />
-                    <SocialLink
-                        name="GoogleScholar"
-                        icon={faGraduationCap}
-                        href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
-                    />
-                    <SocialLink
-                        name="LinkedIn"
-                        icon={faLinkedin}
-                        href="https://www.linkedin.com/in/aaron-conway-toronto/"
-                    />
-                    <SocialLink
-                        name="CV"
-                        icon={faFile}
-                        href="https://conwaycv.netlify.app"
-                    />
-                </div>
-            </footer>
-        </Layout>
-    );
+            <SocialLink
+              name="Twitter"
+              icon={faTwitter}
+              href="https://twitter.com/aw_conway"
+            />
+            <SocialLink
+              name="GitHub"
+              icon={faGithub}
+              href="https://github.com/awconway"
+            />
+            <SocialLink
+              name="GoogleScholar"
+              icon={faGraduationCap}
+              href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
+            />
+            <SocialLink
+              name="LinkedIn"
+              icon={faLinkedin}
+              href="https://www.linkedin.com/in/aaron-conway-toronto/"
+            />
+            <SocialLink
+              name="CV"
+              icon={faFile}
+              href="https://conwaycv.netlify.app"
+            />
+          </div>
+          <CustomView condition={isMobile === true}>
+            <FontAwesomeIcon styleName="chevron" icon={faChevronDown} />
+          </CustomView>
+        </div>
+        <CustomView condition={isMobile === true}>
+          <ScrollingColorBackground
+            selector=".js-color-stop[data-background-color]"
+            colorDataAttribute="data-background-color"
+          />
+          <div
+            className="js-color-stop"
+            data-background-color={"white"}
+            styleName="wrapper"
+            style={{ height: "100vh" }}
+          ></div>
+          {projects.map(({ node }) => (
+            <ProjectViewer key={node.id} project={node} />
+          ))}
+        </CustomView>
+      </div>
+      <CustomView condition={isMobile === true}>
+        <footer styleName="header">
+          <div styleName="fade-top">
+            <h1 styleName="title">aaron conway</h1>
+            <p styleName="description">
+              RBC Chair in Cardiovascular Nursing Research
+            </p>
+          </div>
+          <div styleName="social-links fade-bottom">
+            <SocialLink
+              name="Email"
+              icon={faEnvelope}
+              href="mailto:aaron.conway@utoronto.ca"
+            />
+            <SocialLink
+              name="Twitter"
+              icon={faTwitter}
+              href="https://twitter.com/aw_conway"
+            />
+            <SocialLink
+              name="GitHub"
+              icon={faGithub}
+              href="https://github.com/awconway"
+            />
+            <SocialLink
+              name="GoogleScholar"
+              icon={faGraduationCap}
+              href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
+            />
+            <SocialLink
+              name="LinkedIn"
+              icon={faLinkedin}
+              href="https://www.linkedin.com/in/aaron-conway-toronto/"
+            />
+            <SocialLink
+              name="CV"
+              icon={faFile}
+              href="https://conwaycv.netlify.app"
+            />
+          </div>
+        </footer>
+      </CustomView>
+    </Layout>
+  );
 };
 
 export default IndexPage;
@@ -185,12 +195,12 @@ export const IndexQuery = graphql`
         }
       }
     }
-   profilepic: file(relativePath: {eq: "circle-cropped.png"}) {
-                        childImageSharp {
-                          fixed(width: 125, height: 125){
-                            ...GatsbyImageSharpFixed
-                        }
-                        }
-                      }
+    profilepic: file(relativePath: { eq: "circle-cropped.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `;
