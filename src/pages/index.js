@@ -7,7 +7,6 @@ import {
   faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faGithub,
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
@@ -71,11 +70,6 @@ const IndexPage = ({ data }) => {
               href="https://twitter.com/aw_conway"
             />
             <SocialLink
-              name="GitHub"
-              icon={faGithub}
-              href="https://github.com/awconway"
-            />
-            <SocialLink
               name="GoogleScholar"
               icon={faGraduationCap}
               href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
@@ -129,11 +123,6 @@ const IndexPage = ({ data }) => {
               name="Twitter"
               icon={faTwitter}
               href="https://twitter.com/aw_conway"
-            />
-            <SocialLink
-              name="GitHub"
-              icon={faGithub}
-              href="https://github.com/awconway"
             />
             <SocialLink
               name="GoogleScholar"
