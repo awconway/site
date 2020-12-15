@@ -193,6 +193,19 @@ export const IndexQuery = graphql`
               }
             }
           }
+          screenshots {
+            link
+            image {
+              id
+              childImageSharp {
+                fluid(toFormat: JPG, quality: 80) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                  presentationWidth
+                  presentationHeight
+                }
+              }
+            }
+          }
         }
       }
     }
