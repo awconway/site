@@ -22,7 +22,7 @@ import Img from "gatsby-image";
 
 import "./index.module.css";
 
-import { CustomView, isMobile } from "react-device-detect";
+import { BrowserView, MobileView } from "react-device-detect";
 
 const IndexPage = ({ data }) => {
   const projects = data.allProjectsYaml.edges;
@@ -49,102 +49,100 @@ const IndexPage = ({ data }) => {
           position: "relative",
         }}
       >
-          <ScrollingColorBackground
-            selector=".js-color-stop[data-background-color]"
-            colorDataAttribute="data-background-color"
-          />
-          <div
-            className="js-color-stop"
-            data-background-color={"white"}
-            styleName="wrapper"
-            style={{ height: "100vh" }}
-          >
-        <div styleName="header">
-          <div styleName="fade-top">
-            <Img fixed={data.profilepic.childImageSharp.fixed} />
-            <h1 styleName="title">aaron conway</h1>
-            <p styleName="description">
-              RBC Chair in Cardiovascular Nursing Research
+        <ScrollingColorBackground
+          selector=".js-color-stop[data-background-color]"
+          colorDataAttribute="data-background-color"
+        />
+        <div
+          className="js-color-stop"
+          data-background-color={"white"}
+          styleName="wrapper"
+          style={{ height: "100vh" }}
+        >
+          <div styleName="header">
+            <div styleName="fade-top">
+              <Img fixed={data.profilepic.childImageSharp.fixed} />
+              <h1 styleName="title">aaron conway</h1>
+              <p styleName="description">
+                RBC Chair in Cardiovascular Nursing Research
             </p>
-          </div>
-          <div styleName="social-links fade-bottom">
-            <SocialLink
-              name="Email"
-              icon={faEnvelope}
-              href="mailto:aaron.conway@utoronto.ca"
-            />
-            <SocialLink
-              name="Twitter"
-              icon={faTwitter}
-              href="https://twitter.com/aw_conway"
-            />
-            <SocialLink
-              name="GoogleScholar"
-              icon={faGraduationCap}
-              href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
-            />
-            <SocialLink
-              name="LinkedIn"
-              icon={faLinkedin}
-              href="https://www.linkedin.com/in/aaron-conway-toronto/"
-            />
-            <SocialLink
-              name="CV"
-              icon={faFile}
-              href="https://conwaycv.netlify.app"
-            />
-          </div>
+            </div>
+            <div styleName="social-links fade-bottom">
+              <SocialLink
+                name="Email"
+                icon={faEnvelope}
+                href="mailto:aaron.conway@utoronto.ca"
+              />
+              <SocialLink
+                name="Twitter"
+                icon={faTwitter}
+                href="https://twitter.com/aw_conway"
+              />
+              <SocialLink
+                name="GoogleScholar"
+                icon={faGraduationCap}
+                href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
+              />
+              <SocialLink
+                name="LinkedIn"
+                icon={faLinkedin}
+                href="https://www.linkedin.com/in/aaron-conway-toronto/"
+              />
+              <SocialLink
+                name="CV"
+                icon={faFile}
+                href="https://conwaycv.netlify.app"
+              />
+            </div>
             <FontAwesomeIcon styleName="chevron" icon={faChevronDown} />
+          </div>
         </div>
-</div>
-          {projects.map(({ node }) => (
-                    <CustomView condition={isMobile === false}>
-            <ProjectViewerDesktop key={node.id} project={node} />
-            </CustomView>
-
-          ))}
-          {projects.map(({ node }) => (
-                    <CustomView condition={isMobile === true}>
+        {projects.map(({ node }) => (
+          <MobileView>
             <ProjectViewer key={node.id} project={node} />
-            </CustomView>
-
-          ))}
+          </MobileView>
+        ))}
+        {projects.map(({ node }) => (
+          <BrowserView >
+            <ProjectViewerDesktop key={node.id} project={node} />
+          </BrowserView>
+        ))}
       </div>
-        <footer styleName="header">
-          <div styleName="fade-top">
-            <h1 styleName="title">aaron conway</h1>
-            <p styleName="description">
-              RBC Chair in Cardiovascular Nursing Research
+      <footer styleName="header">
+        <div styleName="fade-top">
+          <h1 styleName="title">aaron conway</h1>
+          <p styleName="description">
+            RBC Chair in Cardiovascular Nursing Research
             </p>
-          </div>
-          <div styleName="social-links fade-bottom">
-            <SocialLink
-              name="Email"
-              icon={faEnvelope}
-              href="mailto:aaron.conway@utoronto.ca"
-            />
-            <SocialLink
-              name="Twitter"
-              icon={faTwitter}
-              href="https://twitter.com/aw_conway"
-            />
-            <SocialLink
-              name="GoogleScholar"
-              icon={faGraduationCap}
-              href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
-            />
-            <SocialLink
-              name="LinkedIn"
-              icon={faLinkedin}
-              href="https://www.linkedin.com/in/aaron-conway-toronto/"
-            />
-            <SocialLink
-              name="CV"
-              icon={faFile}
-              href="https://conwaycv.netlify.app"
-            />
-          </div>
-        </footer>
+        </div>
+        <div styleName="social-links fade-bottom">
+          <SocialLink
+            name="Email"
+            icon={faEnvelope}
+            href="mailto:aaron.conway@utoronto.ca"
+          />
+          <SocialLink
+            name="Twitter"
+            icon={faTwitter}
+            href="https://twitter.com/aw_conway"
+          />
+          <SocialLink
+            name="GoogleScholar"
+            icon={faGraduationCap}
+            href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
+          />
+          <SocialLink
+            name="LinkedIn"
+            icon={faLinkedin}
+            href="https://www.linkedin.com/in/aaron-conway-toronto/"
+          />
+          <SocialLink
+            name="CV"
+            icon={faFile}
+            href="https://conwaycv.netlify.app"
+          />
+        </div>
+      </footer>
     </Layout>
   );
 };
