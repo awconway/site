@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -22,9 +22,16 @@ import Img from "gatsby-image";
 
 import "./index.module.css";
 
-import { BrowserView, MobileView } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 const IndexPage = ({ data }) => {
+
+  const [mobile, setMobile] = useState()
+
+  useEffect(() => {
+    setMobile(isMobile)
+  }, [setMobile])
+
   const projects = data.allProjectsYaml.edges;
 
   return (
@@ -98,14 +105,11 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
         {projects.map(({ node }) => (
-          <MobileView>
+            mobile ? (
             <ProjectViewer key={node.id} project={node} />
-          </MobileView>
-        ))}
-        {projects.map(({ node }) => (
-          <BrowserView >
-            <ProjectViewerDesktop key={node.id} project={node} />
-          </BrowserView>
+            ) : (
+              <ProjectViewerDesktop key={node.id} project={node} />
+            )
         ))}
       </div>
       <footer styleName="header">
