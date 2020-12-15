@@ -17,6 +17,7 @@ import SEO from "../components/SEO";
 import ScrollingColorBackground from "../components/ScrollingColorBackground";
 import SocialLink from "../components/SocialLink";
 import ProjectViewer from "../components/ProjectViewer";
+import ProjectViewerDesktop from "../components/ProjectViewerDesktop"
 import Img from "gatsby-image";
 
 import "./index.module.css";
@@ -85,9 +86,9 @@ const IndexPage = ({ data }) => {
               href="https://conwaycv.netlify.app"
             />
           </div>
-          <CustomView condition={isMobile === true}>
+          {/* <CustomView condition={isMobile === true}> */}
             <FontAwesomeIcon styleName="chevron" icon={faChevronDown} />
-          </CustomView>
+          {/* </CustomView> */}
         </div>
         <CustomView condition={isMobile === true}>
           <ScrollingColorBackground
@@ -104,8 +105,22 @@ const IndexPage = ({ data }) => {
             <ProjectViewer key={node.id} project={node} />
           ))}
         </CustomView>
+        <CustomView condition={isMobile === false}>
+        <ScrollingColorBackground
+            selector=".js-color-stop[data-background-color]"
+            colorDataAttribute="data-background-color"
+          />
+          <div
+            className="js-color-stop"
+            data-background-color={"white"}
+            styleName="wrapper"
+            style={{ height: "100vh" }}
+          ></div>
+          {projects.map(({ node }) => (
+            <ProjectViewerDesktop key={node.id} project={node} />
+          ))}
+        </CustomView>
       </div>
-      <CustomView condition={isMobile === true}>
         <footer styleName="header">
           <div styleName="fade-top">
             <h1 styleName="title">aaron conway</h1>
@@ -141,7 +156,6 @@ const IndexPage = ({ data }) => {
             />
           </div>
         </footer>
-      </CustomView>
     </Layout>
   );
 };
@@ -173,10 +187,8 @@ export const IndexQuery = graphql`
             image {
               id
               childImageSharp {
-                fluid(toFormat: JPG, quality: 80) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                  presentationWidth
-                  presentationHeight
+                fixed(width: 250, height: 322) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }

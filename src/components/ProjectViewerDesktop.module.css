@@ -1,0 +1,231 @@
+.snap {
+  scroll-snap-align: start;
+}
+
+.project {
+  position: relative;
+  /* width: 100vw; */
+  height: 100vh;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  /* scroll-snap-type: x mandatory; */
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /*
+   * Enable hardware compositing in modern browsers.
+   * Creates a new layer with its own backing surface that can significantly
+   * improve scroll performance.
+   */
+  /* transform: [{ translateZ: 0 }]; */
+  /* iOS native scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+.inner-container {
+  position: relative;
+  display: flex;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.background-text {
+  /* display: flex; */
+  position: absolute;
+  display: block;
+  margin: 0;
+  left: 15vw;
+  /* overflow: hidden; */
+  bottom: 0px;
+  font-size: 350px;
+  font-weight: bolder;
+  line-height: 255px;
+  color: rgba(255, 255, 255, 0.06);
+  text-transform: uppercase;
+  letter-spacing: 12.666667;
+  white-space: nowrap;
+}
+
+.background-banner {
+  margin-top: 24vh;
+  padding-top: 2.8vh;
+  padding-bottom: 2.8vh;
+  height: 16vh;
+  /* width: 600px; */
+  width: 100vw;
+  /* align-items: center; */
+  background-color: white;
+}
+
+.background-text.dark {
+  color: rgba(0, 0, 0, 0.06);
+}
+
+.slide {
+  position: relative;
+  scroll-snap-align: center;
+  /* min-width: 100vw; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  margin-left: 1vw;
+  margin-right: 1vw;
+  flex: 1 1 auto;
+}
+
+.first-slide {
+  scroll-snap-align: start;
+  width: 80vw;
+  max-width: 600px;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-left: 0px;
+  margin-right: -1vw;
+}
+
+.title {
+  height: 24vh;
+  color: white;
+  /* padding: 40px; */
+  margin: 0;
+  margin-left: 4.1vh;
+  display: flex;
+  align-items: center;
+  font-size: 8vmin;
+  font-weight: normal;
+}
+
+@media screen and (min-width: 600px) and (min-height: 600px) {
+  .title {
+    font-size: 45px;
+  }
+}
+
+.title.dark {
+  color: black;
+}
+
+.icon-container {
+  display: flex;
+  padding-left: 4.1vh;
+  padding-top: 2.8vh;
+  padding-bottom: 2.8vh;
+  align-items: center;
+  /* background-color: white; */
+}
+
+.description {
+  display: flex;
+  flex: 1;
+  margin: 0 20px;
+  height: 16vh;
+  /* text-overflow: ellipsis; */
+  overflow: auto;
+}
+
+@media screen and (max-width: 600px), screen and (max-height: 600px) {
+  .description {
+    font-size: 11px;
+  }
+}
+
+.keywords {
+  padding-left: 4.1vh;
+  color: white;
+  opacity: 0.8;
+  /* font-size: 2vmin; */
+}
+
+.keywords.dark {
+  color: black;
+}
+
+.keywords > li {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  /* box-sizing: border-box; */
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+.keywords.dark > li {
+  border: 1px solid black;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  /* display: flex; */
+  letter-spacing: 3px;
+  font-size: 15px;
+  color: white;
+}
+
+.scroll.dark {
+  color: black;
+}
+
+.arrow {
+}
+
+/* iPhone notch */
+@supports (padding: max(0px)) {
+  .inner-container {
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+
+  .title {
+    margin-left: max(4.1vh, env(safe-area-inset-left));
+  }
+
+  .icon-container {
+    padding-left: max(4.1vh, env(safe-area-inset-left));
+  }
+
+  .keywords {
+    padding-inline-start: max(4.1vh, env(safe-area-inset-left));
+  }
+
+  .scroll {
+    right: max(20px, env(safe-area-inset-right));
+  }
+}
+
+.photos {
+  margin-top: 10vh;
+  margin-left: 20px;
+  /* Prevent vertical gaps */
+  line-height: 0;
+   
+  -webkit-column-count: 2;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    2;
+  -moz-column-gap:      0px;
+  column-count:         2;
+  column-gap:           0px;
+
+}
+
+.photos Img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+

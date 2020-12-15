@@ -14,8 +14,8 @@
   description: ""
   prerenderedIcon: true
   screenshots:
-    - image: "./resp/HFNO-infographic.png"
-      link: "https://awconway.github.io/HFNO"
+    # - image: "./resp/HFNO-infographic.png"
+    #   link: "https://awconway.github.io/HFNO"
     - image: "./resp/seq.jpg"
       link: "https://www.nature.com/articles/s41598-019-46751-2"
     - image: "./resp/pre-apneic.jpg"

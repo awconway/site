@@ -32,7 +32,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        host: 'https://www.aaronconway.info',
         path: `${__dirname}/src/data/`,
       },
     },
