@@ -27,8 +27,6 @@ import { CustomView, isMobile } from "react-device-detect";
 const IndexPage = ({ data }) => {
   const projects = data.allProjectsYaml.edges;
 
-  // console.log("==projects", projects);
-
   return (
     <Layout>
       <SEO
@@ -51,6 +49,16 @@ const IndexPage = ({ data }) => {
           position: "relative",
         }}
       >
+          <ScrollingColorBackground
+            selector=".js-color-stop[data-background-color]"
+            colorDataAttribute="data-background-color"
+          />
+          <div
+            className="js-color-stop"
+            data-background-color={"white"}
+            styleName="wrapper"
+            style={{ height: "100vh" }}
+          >
         <div styleName="header">
           <div styleName="fade-top">
             <Img fixed={data.profilepic.childImageSharp.fixed} />
@@ -86,40 +94,21 @@ const IndexPage = ({ data }) => {
               href="https://conwaycv.netlify.app"
             />
           </div>
-          {/* <CustomView condition={isMobile === true}> */}
             <FontAwesomeIcon styleName="chevron" icon={faChevronDown} />
-          {/* </CustomView> */}
         </div>
-        <CustomView condition={isMobile === true}>
-          <ScrollingColorBackground
-            selector=".js-color-stop[data-background-color]"
-            colorDataAttribute="data-background-color"
-          />
-          <div
-            className="js-color-stop"
-            data-background-color={"white"}
-            styleName="wrapper"
-            style={{ height: "100vh" }}
-          ></div>
+</div>
           {projects.map(({ node }) => (
-            <ProjectViewer key={node.id} project={node} />
-          ))}
-        </CustomView>
-        <CustomView condition={isMobile === false}>
-        <ScrollingColorBackground
-            selector=".js-color-stop[data-background-color]"
-            colorDataAttribute="data-background-color"
-          />
-          <div
-            className="js-color-stop"
-            data-background-color={"white"}
-            styleName="wrapper"
-            style={{ height: "100vh" }}
-          ></div>
-          {projects.map(({ node }) => (
+                    <CustomView condition={isMobile === false}>
             <ProjectViewerDesktop key={node.id} project={node} />
+            </CustomView>
+
           ))}
-        </CustomView>
+          {projects.map(({ node }) => (
+                    <CustomView condition={isMobile === true}>
+            <ProjectViewer key={node.id} project={node} />
+            </CustomView>
+
+          ))}
       </div>
         <footer styleName="header">
           <div styleName="fade-top">
