@@ -87,10 +87,11 @@
   screenshots:
     - image: "./teaching/nur1027.png"
       link: "https://nur1027.netlify.com"
-    - image: "./teaching/nur1127.png"
-      link: "https://nur1127.netlify.com"
     - image: "./teaching/nur1059.png"
       link: "https://nur1059-dataviz.netlify.app/"
+    - image: "./teaching/nur1127.png"
+      link: "https://nur1127.netlify.com"
+
 #  color:
 #  color:
 #  color: "#093355"

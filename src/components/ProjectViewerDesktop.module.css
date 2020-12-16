@@ -48,7 +48,7 @@
   left: 15vw;
   /* overflow: hidden; */
   bottom: 0px;
-  font-size: 350px;
+  font-size: 100px;
   font-weight: bolder;
   line-height: 255px;
   color: rgba(255, 255, 255, 0.06);
@@ -65,7 +65,7 @@
   /* width: 600px; */
   width: 100vw;
   /* align-items: center; */
-  background-color: white;
+  background-color: #f9f4f7;
 }
 
 .background-text.dark {
@@ -125,7 +125,7 @@
   padding-top: 2.8vh;
   padding-bottom: 2.8vh;
   align-items: center;
-  /* background-color: white; */
+  /* background-color: gray; */
 }
 
 .description {
