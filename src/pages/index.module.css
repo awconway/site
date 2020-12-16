@@ -60,6 +60,15 @@
   animation-fill-mode: backwards;
   animation-iteration-count: 3;
 }
+.safari {
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  padding-left: 0.12em;
+  color: #94a4ba;
+  text-transform: lowercase;
+  text-align: center;
+}
 
 .wrapper {
   scroll-snap-align: start;

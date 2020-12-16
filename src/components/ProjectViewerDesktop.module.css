@@ -8,9 +8,9 @@
   height: 100vh;
   margin-top: 100px;
   margin-bottom: 100px;
-  scroll-snap-type: x mandatory;
+  /* scroll-snap-type: x mandatory; */
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   /*
    * Enable hardware compositing in modern browsers.
@@ -22,16 +22,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
-@supports (-webkit-overflow-scrolling: touch) {
-  /*
-   * Disable scroll snap on iOS because of the visual glitch when combined with an animation
-   * See https://stackoverflow.com/questions/52989070/css-scroll-snap-visual-glitches-on-ios-when-programmatically-setting-style-on
-   * scroll snap used to work fine (no glitch) until iOS 12.2 though :/
-   */
-  .project {
-    scroll-snap-type: none;
-  }
-}
+
 
 .inner-container {
   position: relative;
@@ -57,7 +48,7 @@
   left: 15vw;
   /* overflow: hidden; */
   bottom: 0px;
-  font-size: 48px;
+  font-size: 100px;
   font-weight: bolder;
   line-height: 255px;
   color: rgba(255, 255, 255, 0.06);
@@ -74,7 +65,7 @@
   /* width: 600px; */
   width: 100vw;
   /* align-items: center; */
-  background-color: white;
+  background-color: #f9f4f7;
 }
 
 .background-text.dark {
@@ -93,7 +84,7 @@
   /* border: 1px solid black; */
   margin-left: 1vw;
   margin-right: 1vw;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }
 
 .first-slide {
@@ -134,7 +125,7 @@
   padding-top: 2.8vh;
   padding-bottom: 2.8vh;
   align-items: center;
-  /* background-color: white; */
+  /* background-color: gray; */
 }
 
 .description {
@@ -216,3 +207,25 @@
     right: max(20px, env(safe-area-inset-right));
   }
 }
+
+.photos {
+  margin-top: 10vh;
+  margin-left: 20px;
+  /* Prevent vertical gaps */
+  line-height: 0;
+   
+  -webkit-column-count: 2;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    2;
+  -moz-column-gap:      0px;
+  column-count:         2;
+  column-gap:           0px;
+
+}
+
+.photos Img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
