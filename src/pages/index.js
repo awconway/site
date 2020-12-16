@@ -22,7 +22,7 @@ import Img from "gatsby-image";
 
 import "./index.module.css";
 
-import { isMobile, isSafari, CustomView } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 const IndexPage = ({ data }) => {
 
@@ -66,9 +66,6 @@ const IndexPage = ({ data }) => {
           styleName="wrapper"
           style={{ height: "100vh" }}
         >
-          <CustomView condition={isSafari == true && isMobile == false}>
-            <div styleName="safari">Use chrome for best results when scrolling with a mouse </div>
-          </CustomView>
           <div styleName="header">
             <div styleName="fade-top">
               <Img fixed={data.profilepic.childImageSharp.fixed} />
