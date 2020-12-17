@@ -1,24 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faChevronDown,
-  faGraduationCap,
-  faFile,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import ScrollingColorBackground from "../components/ScrollingColorBackground";
-import SocialLink from "../components/SocialLink";
 import ProjectViewer from "../components/ProjectViewer";
 import ProjectViewerDesktop from "../components/ProjectViewerDesktop"
-import Img from "gatsby-image";
+
+import Header from "../components/header"
 
 import "./index.module.css";
 
@@ -64,45 +53,8 @@ const IndexPage = ({ data }) => {
           className="js-color-stop"
           data-background-color={"white"}
           styleName="wrapper"
-          style={{ height: "100vh" }}
         >
-          <div styleName="header">
-            <div styleName="fade-top">
-              <Img fixed={data.profilepic.childImageSharp.fixed} />
-              <h1 styleName="title">aaron conway</h1>
-              <p styleName="description">
-                RBC Chair in Cardiovascular Nursing Research
-            </p>
-            </div>
-            <div styleName="social-links fade-bottom">
-              <SocialLink
-                name="Email"
-                icon={faEnvelope}
-                href="mailto:aaron.conway@utoronto.ca"
-              />
-              <SocialLink
-                name="Twitter"
-                icon={faTwitter}
-                href="https://twitter.com/aw_conway"
-              />
-              <SocialLink
-                name="GoogleScholar"
-                icon={faGraduationCap}
-                href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
-              />
-              <SocialLink
-                name="LinkedIn"
-                icon={faLinkedin}
-                href="https://www.linkedin.com/in/aaron-conway-toronto/"
-              />
-              <SocialLink
-                name="CV"
-                icon={faFile}
-                href="https://conwaycv.netlify.app"
-              />
-            </div>
-            <FontAwesomeIcon styleName="chevron" icon={faChevronDown} />
-          </div>
+          <Header />
         </div>
         {projects.map(({ node }) => (
           mobile ? (
@@ -112,40 +64,8 @@ const IndexPage = ({ data }) => {
             )
         ))}
       </div>
-      <footer styleName="header">
-        <div styleName="fade-top">
-          <h1 styleName="title">aaron conway</h1>
-          <p styleName="description">
-            RBC Chair in Cardiovascular Nursing Research
-            </p>
-        </div>
-        <div styleName="social-links fade-bottom">
-          <SocialLink
-            name="Email"
-            icon={faEnvelope}
-            href="mailto:aaron.conway@utoronto.ca"
-          />
-          <SocialLink
-            name="Twitter"
-            icon={faTwitter}
-            href="https://twitter.com/aw_conway"
-          />
-          <SocialLink
-            name="GoogleScholar"
-            icon={faGraduationCap}
-            href="https://scholar.google.ca/citations?user=2hpmnr8AAAAJ&hl"
-          />
-          <SocialLink
-            name="LinkedIn"
-            icon={faLinkedin}
-            href="https://www.linkedin.com/in/aaron-conway-toronto/"
-          />
-          <SocialLink
-            name="CV"
-            icon={faFile}
-            href="https://conwaycv.netlify.app"
-          />
-        </div>
+      <footer >
+        <Header />
       </footer>
     </Layout>
   );
@@ -197,13 +117,6 @@ export const IndexQuery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    profilepic: file(relativePath: { eq: "circle-cropped.png" }) {
-      childImageSharp {
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
         }
       }
     }

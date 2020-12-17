@@ -1,11 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-// import { isIOS } from "react-device-detect";
-// import vhCheck from "vh-check";
-
-// This ensures that the icon CSS is loaded immediately before attempting to render icons
-// See https://github.com/FortAwesome/react-fontawesome/issues/134
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 
