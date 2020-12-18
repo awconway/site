@@ -5,7 +5,7 @@ module.exports = {
     title: `Aaron Conway { nursing sedation research }`,
     description: `Personal webpage for Aaron Conway`,
     author: `@aw_conway`,
-    image: `https://www.aaronconway.info/aaronconway.png`,
+    image: `https://www.aaronconway.info/images/aaronconway.png`,
     siteUrl: "https://www.aaronconway.info",
     // These are provided by the netlify build
     repositoryUrl:
