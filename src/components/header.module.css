@@ -53,7 +53,7 @@
   
   .chevron {
     position: absolute;
-    bottom: 40px;
+    bottom: 60px;
     animation: fade-top 1s;
     animation-delay: 1.5s;
     animation-fill-mode: backwards;
