@@ -7,7 +7,7 @@ function SEO({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
       query={detailsQuery}
-      render={data => {
+      render={(data) => {
         const metaTitle = data.site.siteMetadata.title;
         const metaDescription =
           description || data.site.siteMetadata.description;
@@ -35,6 +35,10 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 property: `og:type`,
                 content: `website`,
+              },
+              {
+                property: `og:image`,
+                content: data.site.siteMetadata.image,
               },
               {
                 name: `twitter:card`,
@@ -92,6 +96,8 @@ const detailsQuery = graphql`
         title
         description
         author
+        image
+        siteUrl
       }
     }
   }
