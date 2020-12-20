@@ -52,12 +52,13 @@
   }
   
   .chevron {
-    position: absolute;
-    bottom: 60px;
-    animation: fade-top 1s;
-    animation-delay: 1.5s;
-    animation-fill-mode: backwards;
-    animation-iteration-count: 3;
+    margin-top: 10vh;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    padding-left: 0.12em;
+    color: #94a4ba;
+    text-transform: lowercase;
   }
   
   .wrapper {
