@@ -65,8 +65,8 @@ export default function Header() {
           href="https://conwaycv.netlify.app"
         />
       </div>
-      <div styleName="chevron">
-        <Fade delay={1500}>
+      <div styleName="scroll">
+        <Fade ssrReveal delay={1500}>
           <div>Scroll down</div>
           <FontAwesomeIcon icon={faChevronDown} />
         </Fade>
