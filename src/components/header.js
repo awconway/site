@@ -62,7 +62,7 @@ export default function Header() {
         <SocialLink
           name="CV"
           icon={faFile}
-          href="https://conwaycv.netlify.app"
+          href="https://awconway.github.io/scheduleCV"
         />
       </div>
       <div styleName="scroll">
