@@ -62,7 +62,7 @@ export default function Header() {
         <SocialLink
           name="CV"
           icon={faFile}
-          href="https://awconway.github.io/scheduleCV"
+          href="https://conwaycv.gatsbyjs.io"
         />
       </div>
       <div styleName="scroll">
