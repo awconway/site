@@ -5,10 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faChevronDown,
-  faGraduationCap,
-  faReadme,
+  faGraduationCap
 } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faTwitter, faReadme } from "@fortawesome/free-brands-svg-icons";
 
 import Img from "gatsby-image";
 
