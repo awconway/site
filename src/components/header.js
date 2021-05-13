@@ -6,7 +6,7 @@ import {
   faEnvelope,
   faChevronDown,
   faGraduationCap,
-  faFileUser,
+  faReadme,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
@@ -61,7 +61,7 @@ export default function Header() {
         />
         <SocialLink
           name="CV"
-          icon={faFileUser}
+          icon={faReadme}
           href="https://conwaycv.gatsbyjs.io"
         />
       </div>
