@@ -27,7 +27,7 @@ a:focus {
 }
 
 footer {
-  display: block;
+  /*display: block;*/
   scroll-snap-align: end;
   margin-top: 100px;
   padding: 50px 20px;
