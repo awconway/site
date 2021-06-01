@@ -34,6 +34,12 @@
   icon: "./psa/icon-sed.png"
   prerenderedIcon: true
   screenshots:
+    - image: "./psa/ncmscs.jpg"
+      link: "https://onlinelibrary.wiley.com/doi/full/10.1002/nop2.725"
+    - image: "./psa/ptds.jpg"
+      link: "https://www.sciencedirect.com/science/article/pii/S1546084320301814?via%3Dihub"
+    - image: "./psa/midaz-update.jpg"
+      link: "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-021-01617-5"
     - image: "./psa/pre-sed.jpg"
       link: "https://link.springer.com/content/pdf/10.1007/s40140-020-00368-8.pdf"
     - image: "./psa/scepter.jpg"
