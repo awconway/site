@@ -14,8 +14,8 @@
   description: ""
   prerenderedIcon: true
   screenshots:
-    # - image: "./resp/HFNO-infographic.png"
-    #   link: "https://awconway.github.io/HFNO"
+    - image: "./resp/hfno.jpg"
+      link: "https://www.researchgate.net/publication/348750099_High_flow_nasal_oxygen_during_procedural_sedation_for_cardiac_implantable_electronic_device_procedures_A_randomised_controlled_trial"
     - image: "./resp/seq.jpg"
       link: "https://www.nature.com/articles/s41598-019-46751-2"
     - image: "./resp/pre-apneic.jpg"
