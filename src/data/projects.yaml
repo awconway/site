@@ -34,6 +34,8 @@
   icon: "./psa/icon-sed.png"
   prerenderedIcon: true
   screenshots:
+    - image: "./psa/troops.jpg"
+      link: "https://www.sciencedirect.com/science/article/pii/S1546084321001000"
     - image: "./psa/ncmscs.jpg"
       link: "https://onlinelibrary.wiley.com/doi/full/10.1002/nop2.725"
     - image: "./psa/ptds.jpg"
